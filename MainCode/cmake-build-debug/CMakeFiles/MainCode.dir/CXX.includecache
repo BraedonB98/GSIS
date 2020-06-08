@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/SpaceGrant/GSIS/MainCode/main.cpp
+iostream
+-
+ui.h
+D:/SpaceGrant/GSIS/MainCode/ui.h
+
+D:/SpaceGrant/GSIS/MainCode/ui.cpp
+ui.h
+D:/SpaceGrant/GSIS/MainCode/ui.h
+iostream
+-
+
+D:/SpaceGrant/GSIS/MainCode/ui.h
+
