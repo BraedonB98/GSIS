@@ -12,8 +12,8 @@ private:
 public:
     ui();
     ~ui();
-    mainMenuDisplay();
-    mainMenu();
+    int mainMenuDisplay();
+    int mainMenu();
 };
 
 

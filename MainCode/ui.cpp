@@ -13,7 +13,7 @@ ui::~ui()
 {
 
 }
-ui::mainMenuDisplay()
+int ui::mainMenuDisplay()
 {
     cout<<"Main Menu"<<endl;
     cout<<"------------------------------"<<endl;

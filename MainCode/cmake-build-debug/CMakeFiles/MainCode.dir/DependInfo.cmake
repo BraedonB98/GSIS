@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/SpaceGrant/GSIS/MainCode/main.cpp" "D:/SpaceGrant/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/main.cpp.obj"
-  "D:/SpaceGrant/GSIS/MainCode/ui.cpp" "D:/SpaceGrant/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/ui.cpp.obj"
+  "/home/braedonb98/Documents/GSIS/MainCode/main.cpp" "/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/main.cpp.o"
+  "/home/braedonb98/Documents/GSIS/MainCode/ui.cpp" "/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/ui.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
