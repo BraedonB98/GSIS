@@ -43,10 +43,10 @@ RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/braedonb98/Documents/GSIS/MainCode
+CMAKE_SOURCE_DIR = /home/braedonb98/GSIS/MainCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug
+CMAKE_BINARY_DIR = /home/braedonb98/GSIS/MainCode/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MainCode.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/MainCode.dir/flags.make
 
 CMakeFiles/MainCode.dir/main.cpp.o: CMakeFiles/MainCode.dir/flags.make
 CMakeFiles/MainCode.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MainCode.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MainCode.dir/main.cpp.o -c /home/braedonb98/Documents/GSIS/MainCode/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MainCode.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MainCode.dir/main.cpp.o -c /home/braedonb98/GSIS/MainCode/main.cpp
 
 CMakeFiles/MainCode.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MainCode.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/Documents/GSIS/MainCode/main.cpp > CMakeFiles/MainCode.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/GSIS/MainCode/main.cpp > CMakeFiles/MainCode.dir/main.cpp.i
 
 CMakeFiles/MainCode.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MainCode.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/Documents/GSIS/MainCode/main.cpp -o CMakeFiles/MainCode.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/main.cpp -o CMakeFiles/MainCode.dir/main.cpp.s
 
 CMakeFiles/MainCode.dir/ui.cpp.o: CMakeFiles/MainCode.dir/flags.make
 CMakeFiles/MainCode.dir/ui.cpp.o: ../ui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MainCode.dir/ui.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MainCode.dir/ui.cpp.o -c /home/braedonb98/Documents/GSIS/MainCode/ui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MainCode.dir/ui.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MainCode.dir/ui.cpp.o -c /home/braedonb98/GSIS/MainCode/ui.cpp
 
 CMakeFiles/MainCode.dir/ui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MainCode.dir/ui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/Documents/GSIS/MainCode/ui.cpp > CMakeFiles/MainCode.dir/ui.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/GSIS/MainCode/ui.cpp > CMakeFiles/MainCode.dir/ui.cpp.i
 
 CMakeFiles/MainCode.dir/ui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MainCode.dir/ui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/Documents/GSIS/MainCode/ui.cpp -o CMakeFiles/MainCode.dir/ui.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/ui.cpp -o CMakeFiles/MainCode.dir/ui.cpp.s
 
 # Object files for target MainCode
 MainCode_OBJECTS = \
@@ -95,7 +95,7 @@ MainCode: CMakeFiles/MainCode.dir/main.cpp.o
 MainCode: CMakeFiles/MainCode.dir/ui.cpp.o
 MainCode: CMakeFiles/MainCode.dir/build.make
 MainCode: CMakeFiles/MainCode.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MainCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MainCode"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MainCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/MainCode.dir/clean:
 .PHONY : CMakeFiles/MainCode.dir/clean
 
 CMakeFiles/MainCode.dir/depend:
-	cd /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/braedonb98/Documents/GSIS/MainCode /home/braedonb98/Documents/GSIS/MainCode /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/braedonb98/GSIS/MainCode/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/braedonb98/GSIS/MainCode /home/braedonb98/GSIS/MainCode /home/braedonb98/GSIS/MainCode/cmake-build-debug /home/braedonb98/GSIS/MainCode/cmake-build-debug /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MainCode.dir/depend
 

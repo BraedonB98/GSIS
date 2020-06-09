@@ -44,10 +44,10 @@ RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/braedonb98/Documents/GSIS/MainCode
+CMAKE_SOURCE_DIR = /home/braedonb98/GSIS/MainCode
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug
+CMAKE_BINARY_DIR = /home/braedonb98/GSIS/MainCode/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/MainCode.dir/clean
 CMakeFiles/MainCode.dir/all:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/depend
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MainCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MainCode"
 .PHONY : CMakeFiles/MainCode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MainCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MainCode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/Documents/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MainCode.dir/rule
 
 # Convenience name for target.

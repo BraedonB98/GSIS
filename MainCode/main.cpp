@@ -21,7 +21,7 @@ int main() {
         //const string png = ".png";
         //string wxImgCommand = WXIMG + userInput + wav + userInput + png;
         //cout<<wxImgCommand<<endl;
-        system("cd \n cd /home/braedonb98/Documents/GSIS/WXTOIMGTestFIles \n ls \n wxtoimg -S  -h -t n x.wav > x.png"); //all system commands need to be in 1 line with \n for next command otherwise its like it starts a sepporate terminal
+        system("cd \n cd /home/braedonb98/GSIS/WXTOIMGTestFIles \n ls \n wxtoimg -S  -h -t n x.wav > x.png"); //all system commands need to be in 1 line with \n for next command otherwise its like it starts a sepporate terminal
         //system(wxImgCommand); //run terminal commands
     }
     else if (menu == 3)
