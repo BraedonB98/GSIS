@@ -135,7 +135,7 @@ blocks:
     alias: ''
     bits_per_sample: '8'
     comment: ''
-    file: /home/braedonb98/Desktop/Wxtoimginput.wav
+    file: /home/braedonb98/GSIS/WAVFilesFromGNURadio/Wxtoimginput.wav
     nchan: '1'
     samp_rate: '48000'
   states:

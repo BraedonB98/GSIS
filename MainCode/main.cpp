@@ -11,7 +11,7 @@ int main() {
     {
         cout<<"Put main program here"<<endl;
     }
-    else if (menu == 2)
+    else if (menu == 2)//Test WXTOIMG Portion
     {
         cout<<"Enter File Name"<<endl;
         //string userInput = "";
@@ -24,11 +24,12 @@ int main() {
         system("cd \n cd /home/braedonb98/GSIS/WXTOIMGTestFIles \n ls \n wxtoimg -S  -h -t n x.wav > x.png"); //all system commands need to be in 1 line with \n for next command otherwise its like it starts a sepporate terminal
         //system(wxImgCommand); //run terminal commands
     }
-    else if (menu == 3)
+    else if (menu == 3) //Test GNU Radio
     {
-        cout<<"Put SDR program here"<<endl;
+        cout<<"Running SDR Test, A new window should pop up"<<endl;
+        system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python3 ./GSIS.py");
     }
-    else if (menu == 4)
+    else if (menu == 4)//Test Satellite tracking.
     {
         cout<<"Put Satellite tracking program here"<<endl;
     }

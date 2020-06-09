@@ -224,7 +224,7 @@ class GSIS(gr.top_block, Qt.QWidget):
         self._freq_win = RangeWidget(self._freq_range, self.set_freq, 'Frequency', "counter_slider", float)
         self.top_grid_layout.addWidget(self._freq_win)
         self.dc_blocker_xx_0 = filter.dc_blocker_cc(1024, True)
-        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('/home/braedonb98/Desktop/Wxtoimginput.wav', 1, 48000, 8)
+        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('/home/braedonb98/GSIS/WAVFilesFromGNURadio/Wxtoimginput.wav', 1, 48000, 8)
         self.audio_sink_0 = audio.sink(48000, '', True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=48e4,
