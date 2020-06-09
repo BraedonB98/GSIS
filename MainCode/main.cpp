@@ -9,6 +9,7 @@ int main() {
     int menu=display.mainMenu();
     if (menu == 1)
     {
+        //will need to figure out how to multitread the sdr and the tracking software
         cout<<"Put main program here"<<endl;
     }
     else if (menu == 2)//Test WXTOIMG Portion
@@ -31,6 +32,7 @@ int main() {
     }
     else if (menu == 4)//Test Satellite tracking.
     {
+        //launch and run predict program here
         cout<<"Put Satellite tracking program here"<<endl;
     }
 
