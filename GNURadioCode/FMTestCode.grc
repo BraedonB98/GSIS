@@ -10,7 +10,7 @@ options:
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: GSISSatTest
+    id: GSISFMTEST
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -21,7 +21,7 @@ options:
     run_options: prompt
     sizing_mode: fixed
     thread_safe_setters: ''
-    title: Ground Station Integration Software
+    title: Ground Station Integration Software FM Test Code
     window_size: ''
   states:
     bus_sink: false
@@ -49,28 +49,28 @@ blocks:
   parameters:
     comment: ''
     gui_hint: 'settingsTab:'
-    label: Satellite
-    label0: NOAA-15
-    label1: NOAA-18
-    label2: NOAA-19
-    label3: ''
-    label4: ''
+    label: FMChannel
+    label0: KBCO
+    label1: KTCL
+    label2: KWBL
+    label3: KYGO
+    label4: KKSE
     labels: '[]'
-    num_opts: '3'
-    option1: '139.9125'
-    option2: '137.1000'
-    option3: '3'
-    option4: '4'
+    num_opts: '5'
+    option1: '93.3'
+    option2: '106.7'
+    option3: '98.5'
+    option4: '92.5'
     options: '[0, 1, 2]'
     orient: Qt.QHBoxLayout
     type: real
-    value: '137.6200'
+    value: '97.3'
     widget: radio_buttons
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [12, 266]
+    coordinate: [22, 253]
     rotation: 0
     state: true
 - name: analog_wfm_rcv_0
@@ -236,7 +236,7 @@ blocks:
     bb_gain7: '20'
     bb_gain8: '20'
     bb_gain9: '20'
-    bw0: '100000'
+    bw0: '200000'
     bw1: '0'
     bw10: '0'
     bw11: '0'
@@ -373,7 +373,7 @@ blocks:
     freq7: 100e6
     freq8: 100e6
     freq9: 100e6
-    gain0: '8'
+    gain0: '5'
     gain1: '10'
     gain10: '10'
     gain11: '10'
@@ -735,7 +735,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [18, 183]
+    coordinate: [22, 172]
     rotation: 0
     state: true
 

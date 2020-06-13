@@ -37,6 +37,50 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="SettingsTest">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/SettingsTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 SettingsTest"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SettingsTest/fast">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/SettingsTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 SettingsTest/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="MainCode">
 				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/MainCode" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
@@ -82,13 +126,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.cpp">
+			<Option target="SettingsTest"/>
+			<Option target="MainCode"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.h">
+			<Option target="SettingsTest"/>
+			<Option target="MainCode"/>
+		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/main.cpp">
 			<Option target="MainCode"/>
 		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/satData.cpp">
+			<Option target="SettingsTest"/>
+			<Option target="MainCode"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/satData.h">
+			<Option target="SettingsTest"/>
+			<Option target="MainCode"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/settingsTestFile.cpp">
+			<Option target="SettingsTest"/>
+		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/ui.cpp">
+			<Option target="SettingsTest"/>
 			<Option target="MainCode"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/ui.h">
+			<Option target="SettingsTest"/>
 			<Option target="MainCode"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/CMakeLists.txt">

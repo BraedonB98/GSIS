@@ -1,0 +1,10 @@
+Pass Direction
+0
+Channel Image
+0
+Enhancement
+1
+SoundCard Frequency
+48001
+Satellite
+0

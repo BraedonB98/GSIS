@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o CMakeFiles/SettingsTest.dir/ui.cpp.o CMakeFiles/SettingsTest.dir/satData.cpp.o CMakeFiles/SettingsTest.dir/Settings.cpp.o  -o SettingsTest 

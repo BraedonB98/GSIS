@@ -10,7 +10,7 @@ options:
     gen_linking: dynamic
     generate_options: qt_gui
     hier_block_src_path: '.:'
-    id: GSISSatTest
+    id: GSISSatNOAA19
     max_nouts: '0'
     output_language: python
     placement: (0,0)
@@ -44,35 +44,6 @@ blocks:
     coordinate: [26, 108]
     rotation: 0
     state: enabled
-- name: sat
-  id: variable_qtgui_chooser
-  parameters:
-    comment: ''
-    gui_hint: 'settingsTab:'
-    label: Satellite
-    label0: NOAA-15
-    label1: NOAA-18
-    label2: NOAA-19
-    label3: ''
-    label4: ''
-    labels: '[]'
-    num_opts: '3'
-    option1: '139.9125'
-    option2: '137.1000'
-    option3: '3'
-    option4: '4'
-    options: '[0, 1, 2]'
-    orient: Qt.QHBoxLayout
-    type: real
-    value: '137.6200'
-    widget: radio_buttons
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [12, 266]
-    rotation: 0
-    state: true
 - name: analog_wfm_rcv_0
   id: analog_wfm_rcv
   parameters:
@@ -341,7 +312,7 @@ blocks:
     dc_offset_mode7: '0'
     dc_offset_mode8: '0'
     dc_offset_mode9: '0'
-    freq0: sat*1e6
+    freq0: 137.1*1e6
     freq1: 100e6
     freq10: 100e6
     freq11: 100e6
@@ -523,147 +494,6 @@ blocks:
     coordinate: [52, 887]
     rotation: 0
     state: true
-- name: qtgui_freq_sink_x_0
-  id: qtgui_freq_sink_x
-  parameters:
-    affinity: ''
-    alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    autoscale: 'False'
-    average: '1.0'
-    axislabels: 'True'
-    bw: samp_rate
-    color1: '"blue"'
-    color10: '"dark blue"'
-    color2: '"red"'
-    color3: '"green"'
-    color4: '"black"'
-    color5: '"cyan"'
-    color6: '"magenta"'
-    color7: '"yellow"'
-    color8: '"dark red"'
-    color9: '"dark green"'
-    comment: ''
-    ctrlpanel: 'False'
-    fc: sat*1e6
-    fftsize: '1024'
-    freqhalf: 'True'
-    grid: 'False'
-    gui_hint: ''
-    label: Relative Gain
-    label1: ''
-    label10: ''''''
-    label2: ''''''
-    label3: ''''''
-    label4: ''''''
-    label5: ''''''
-    label6: ''''''
-    label7: ''''''
-    label8: ''''''
-    label9: ''''''
-    legend: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    name: '""'
-    nconnections: '1'
-    showports: 'False'
-    tr_chan: '0'
-    tr_level: '0.0'
-    tr_mode: qtgui.TRIG_MODE_FREE
-    tr_tag: '""'
-    type: complex
-    units: dB
-    update_time: '0.10'
-    width1: '1'
-    width10: '1'
-    width2: '1'
-    width3: '1'
-    width4: '1'
-    width5: '1'
-    width6: '1'
-    width7: '1'
-    width8: '1'
-    width9: '1'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
-    ymax: '10'
-    ymin: '-140'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [604, 575]
-    rotation: 0
-    state: true
-- name: qtgui_waterfall_sink_x_0
-  id: qtgui_waterfall_sink_x
-  parameters:
-    affinity: ''
-    alias: ''
-    alpha1: '1.0'
-    alpha10: '1.0'
-    alpha2: '1.0'
-    alpha3: '1.0'
-    alpha4: '1.0'
-    alpha5: '1.0'
-    alpha6: '1.0'
-    alpha7: '1.0'
-    alpha8: '1.0'
-    alpha9: '1.0'
-    axislabels: 'True'
-    bw: samp_rate
-    color1: '0'
-    color10: '0'
-    color2: '0'
-    color3: '0'
-    color4: '0'
-    color5: '0'
-    color6: '0'
-    color7: '0'
-    color8: '0'
-    color9: '0'
-    comment: ''
-    fc: sat*1e6
-    fftsize: '1024'
-    freqhalf: 'True'
-    grid: 'False'
-    gui_hint: ''
-    int_max: '10'
-    int_min: '-140'
-    label1: ''
-    label10: ''
-    label2: ''
-    label3: ''
-    label4: ''
-    label5: ''
-    label6: ''
-    label7: ''
-    label8: ''
-    label9: ''
-    legend: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    name: '""'
-    nconnections: '1'
-    showports: 'False'
-    type: complex
-    update_time: '0.10'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [641, 705]
-    rotation: 0
-    state: true
 - name: rational_resampler_xxx_0
   id: rational_resampler_xxx
   parameters:
@@ -704,46 +534,10 @@ blocks:
     coordinate: [584, 946]
     rotation: 0
     state: true
-- name: settingsTab
-  id: qtgui_tab_widget
-  parameters:
-    alias: ''
-    comment: ''
-    gui_hint: ''
-    label0: Settings
-    label1: Tab 1
-    label10: Tab 10
-    label11: Tab 11
-    label12: Tab 12
-    label13: Tab 13
-    label14: Tab 14
-    label15: Tab 15
-    label16: Tab 16
-    label17: Tab 17
-    label18: Tab 18
-    label19: Tab 19
-    label2: Tab 2
-    label3: Tab 3
-    label4: Tab 4
-    label5: Tab 5
-    label6: Tab 6
-    label7: Tab 7
-    label8: Tab 8
-    label9: Tab 9
-    num_tabs: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [18, 183]
-    rotation: 0
-    state: true
 
 connections:
 - [analog_wfm_rcv_0, '0', audio_sink_0, '0']
 - [analog_wfm_rcv_0, '0', blocks_wavfile_sink_0, '0']
-- [dc_blocker_xx_0, '0', qtgui_freq_sink_x_0, '0']
-- [dc_blocker_xx_0, '0', qtgui_waterfall_sink_x_0, '0']
 - [dc_blocker_xx_0, '0', rational_resampler_xxx_1, '0']
 - [low_pass_filter_0, '0', rational_resampler_xxx_0, '0']
 - [osmosdr_source_1, '0', dc_blocker_xx_0, '0']
