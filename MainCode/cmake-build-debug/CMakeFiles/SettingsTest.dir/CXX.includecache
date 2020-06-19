@@ -23,6 +23,20 @@ bits/stdc++.h
 -
 
 /home/braedonb98/GSIS/MainCode/Settings.h
+iostream
+-
+
+/home/braedonb98/GSIS/MainCode/satData.cpp
+satData.h
+/home/braedonb98/GSIS/MainCode/satData.h
+iostream
+-
+SFML/Network.hpp
+-
+
+/home/braedonb98/GSIS/MainCode/satData.h
+iostream
+-
 
 /home/braedonb98/GSIS/MainCode/settingsTestFile.cpp
 iostream
@@ -32,5 +46,23 @@ ui.h
 Settings.h
 /home/braedonb98/GSIS/MainCode/Settings.h
 
+/home/braedonb98/GSIS/MainCode/ui.cpp
+ui.h
 /home/braedonb98/GSIS/MainCode/ui.h
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+bits/stdc++.h
+-
+Settings.h
+/home/braedonb98/GSIS/MainCode/Settings.h
+sstream
+-
+
+/home/braedonb98/GSIS/MainCode/ui.h
+Settings.h
+/home/braedonb98/GSIS/MainCode/Settings.h
 

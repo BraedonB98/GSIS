@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named MainCode
+
+# Build rule for target.
+MainCode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainCode
+.PHONY : MainCode
+
+# fast build rule for target.
+MainCode/fast:
+	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/build
+.PHONY : MainCode/fast
+
+#=============================================================================
 # Target rules for targets named SettingsTest
 
 # Build rule for target.
@@ -124,17 +137,17 @@ SettingsTest/fast:
 .PHONY : SettingsTest/fast
 
 #=============================================================================
-# Target rules for targets named MainCode
+# Target rules for targets named SatTest
 
 # Build rule for target.
-MainCode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainCode
-.PHONY : MainCode
+SatTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SatTest
+.PHONY : SatTest
 
 # fast build rule for target.
-MainCode/fast:
-	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/build
-.PHONY : MainCode/fast
+SatTest/fast:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/build
+.PHONY : SatTest/fast
 
 Settings.o: Settings.cpp.o
 
@@ -142,8 +155,9 @@ Settings.o: Settings.cpp.o
 
 # target to build an object file
 Settings.cpp.o:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.o
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.o
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.o
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/Settings.cpp.o
 .PHONY : Settings.cpp.o
 
 Settings.i: Settings.cpp.i
@@ -152,8 +166,9 @@ Settings.i: Settings.cpp.i
 
 # target to preprocess a source file
 Settings.cpp.i:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.i
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.i
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.i
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/Settings.cpp.i
 .PHONY : Settings.cpp.i
 
 Settings.s: Settings.cpp.s
@@ -162,8 +177,9 @@ Settings.s: Settings.cpp.s
 
 # target to generate assembly for a file
 Settings.cpp.s:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.s
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.s
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.s
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/Settings.cpp.s
 .PHONY : Settings.cpp.s
 
 main.o: main.cpp.o
@@ -199,8 +215,9 @@ satData.o: satData.cpp.o
 
 # target to build an object file
 satData.cpp.o:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.o
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/satData.cpp.o
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.o
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satData.cpp.o
 .PHONY : satData.cpp.o
 
 satData.i: satData.cpp.i
@@ -209,8 +226,9 @@ satData.i: satData.cpp.i
 
 # target to preprocess a source file
 satData.cpp.i:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.i
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/satData.cpp.i
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.i
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satData.cpp.i
 .PHONY : satData.cpp.i
 
 satData.s: satData.cpp.s
@@ -219,9 +237,37 @@ satData.s: satData.cpp.s
 
 # target to generate assembly for a file
 satData.cpp.s:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.s
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/satData.cpp.s
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/satData.cpp.s
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satData.cpp.s
 .PHONY : satData.cpp.s
+
+satDataTest.o: satDataTest.cpp.o
+
+.PHONY : satDataTest.o
+
+# target to build an object file
+satDataTest.cpp.o:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satDataTest.cpp.o
+.PHONY : satDataTest.cpp.o
+
+satDataTest.i: satDataTest.cpp.i
+
+.PHONY : satDataTest.i
+
+# target to preprocess a source file
+satDataTest.cpp.i:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satDataTest.cpp.i
+.PHONY : satDataTest.cpp.i
+
+satDataTest.s: satDataTest.cpp.s
+
+.PHONY : satDataTest.s
+
+# target to generate assembly for a file
+satDataTest.cpp.s:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/satDataTest.cpp.s
+.PHONY : satDataTest.cpp.s
 
 settingsTestFile.o: settingsTestFile.cpp.o
 
@@ -256,8 +302,9 @@ ui.o: ui.cpp.o
 
 # target to build an object file
 ui.cpp.o:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.o
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.o
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.o
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/ui.cpp.o
 .PHONY : ui.cpp.o
 
 ui.i: ui.cpp.i
@@ -266,8 +313,9 @@ ui.i: ui.cpp.i
 
 # target to preprocess a source file
 ui.cpp.i:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.i
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.i
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.i
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/ui.cpp.i
 .PHONY : ui.cpp.i
 
 ui.s: ui.cpp.s
@@ -276,8 +324,9 @@ ui.s: ui.cpp.s
 
 # target to generate assembly for a file
 ui.cpp.s:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.s
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.s
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.s
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/ui.cpp.s
 .PHONY : ui.cpp.s
 
 # Help Target
@@ -287,9 +336,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... SettingsTest"
 	@echo "... MainCode"
+	@echo "... SettingsTest"
+	@echo "... SatTest"
+	@echo "... edit_cache"
 	@echo "... Settings.o"
 	@echo "... Settings.i"
 	@echo "... Settings.s"
@@ -299,6 +349,9 @@ help:
 	@echo "... satData.o"
 	@echo "... satData.i"
 	@echo "... satData.s"
+	@echo "... satDataTest.o"
+	@echo "... satDataTest.i"
+	@echo "... satDataTest.s"
 	@echo "... settingsTestFile.o"
 	@echo "... settingsTestFile.i"
 	@echo "... settingsTestFile.s"

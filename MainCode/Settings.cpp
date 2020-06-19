@@ -24,6 +24,7 @@ Settings::Settings() {
 Settings::~Settings() {}
 
 void Settings::printWXSettings() {
+    cout<<endl;
     cout<<"Current Settings"<<endl;
     cout<<"------------------------------------------"<<endl;
     cout<<"Pass Direction = ";

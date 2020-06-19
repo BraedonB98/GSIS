@@ -53,8 +53,9 @@ CMAKE_BINARY_DIR = /home/braedonb98/GSIS/MainCode/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/SettingsTest.dir/all
 all: CMakeFiles/MainCode.dir/all
+all: CMakeFiles/SettingsTest.dir/all
+all: CMakeFiles/SatTest.dir/all
 
 .PHONY : all
 
@@ -64,37 +65,11 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/SettingsTest.dir/clean
 clean: CMakeFiles/MainCode.dir/clean
+clean: CMakeFiles/SettingsTest.dir/clean
+clean: CMakeFiles/SatTest.dir/clean
 
 .PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/SettingsTest.dir
-
-# All Build rule for target.
-CMakeFiles/SettingsTest.dir/all:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/depend
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=6,7,8,9,10 "Built target SettingsTest"
-.PHONY : CMakeFiles/SettingsTest.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/SettingsTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SettingsTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/SettingsTest.dir/rule
-
-# Convenience name for target.
-SettingsTest: CMakeFiles/SettingsTest.dir/rule
-
-.PHONY : SettingsTest
-
-# clean rule for target.
-CMakeFiles/SettingsTest.dir/clean:
-	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/clean
-.PHONY : CMakeFiles/SettingsTest.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/MainCode.dir
@@ -122,6 +97,60 @@ MainCode: CMakeFiles/MainCode.dir/rule
 CMakeFiles/MainCode.dir/clean:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/clean
 .PHONY : CMakeFiles/MainCode.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SettingsTest.dir
+
+# All Build rule for target.
+CMakeFiles/SettingsTest.dir/all:
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/depend
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15 "Built target SettingsTest"
+.PHONY : CMakeFiles/SettingsTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/SettingsTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SettingsTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/SettingsTest.dir/rule
+
+# Convenience name for target.
+SettingsTest: CMakeFiles/SettingsTest.dir/rule
+
+.PHONY : SettingsTest
+
+# clean rule for target.
+CMakeFiles/SettingsTest.dir/clean:
+	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/clean
+.PHONY : CMakeFiles/SettingsTest.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SatTest.dir
+
+# All Build rule for target.
+CMakeFiles/SatTest.dir/all:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/depend
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=6,7,8,9,10 "Built target SatTest"
+.PHONY : CMakeFiles/SatTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/SatTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SatTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/SatTest.dir/rule
+
+# Convenience name for target.
+SatTest: CMakeFiles/SatTest.dir/rule
+
+.PHONY : SatTest
+
+# clean rule for target.
+CMakeFiles/SatTest.dir/clean:
+	$(MAKE) -f CMakeFiles/SatTest.dir/build.make CMakeFiles/SatTest.dir/clean
+.PHONY : CMakeFiles/SatTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

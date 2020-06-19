@@ -11,6 +11,7 @@ CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o: ../Settings.h
 CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o: ../settingsTestFile.cpp
 CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o: ../ui.h
 
+CMakeFiles/SettingsTest.dir/ui.cpp.o: ../Settings.h
 CMakeFiles/SettingsTest.dir/ui.cpp.o: ../ui.cpp
 CMakeFiles/SettingsTest.dir/ui.cpp.o: ../ui.h
 

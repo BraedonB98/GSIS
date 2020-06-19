@@ -4,7 +4,6 @@
 
 #include "satData.h"
 #include <iostream>
-#include <SFML/Network.hpp>
 using namespace std;
 satData::satData() {
 
@@ -13,14 +12,12 @@ satData::~satData() {
 
 }
 int satData::connectGPred(int port) {
-
+    return 1;
 }
 
 
 bool portOpen(string& address, int port)
 {
-    //sf::TcpSocket socket;
-   // bool open = (socket.connect(sf::IpAddress(address), port) == sf::Socket::Done);
-    //socket.disconnect();
-    //return open;
+
+    return true;
 }

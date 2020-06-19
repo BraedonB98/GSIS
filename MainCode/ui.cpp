@@ -22,6 +22,7 @@ ui::~ui()
 }
 int ui::mainMenuDisplay()
 {
+    cout<<endl;
     cout<<"Main Menu"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"1.Run Program"<<endl;
@@ -29,6 +30,7 @@ int ui::mainMenuDisplay()
     cout<<"3.SDR Interface Settings"<<endl;
     cout<<"4.Satellite Tracking Settings"<<endl;
     cout<<"5.Quit Program"<<endl;
+
 }
 int ui::mainMenu()
 {
@@ -75,20 +77,22 @@ int ui::mainMenu()
 
 int ui::wxToImgMenuDisplay()
 {
+    cout<<endl;
     cout<<"WXTOIMG Menu"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"1.Run WXTOIMG Decode"<<endl;
     cout<<"2.Edit WXTOIMG Settings"<<endl;
     cout<<"3.Save WXTOIMG Settings"<<endl;
     cout<<"4.Load WXTOIMG Settings"<<endl;
-    cout<<"5.Return To Main Menu"<<endl;
+    cout<<"5.Display Current Settings"<<endl;
+    cout<<"6.Return To Main Menu"<<endl;
 }
 
 int ui::wxToImgMenu()
 {
     string userInput="";
 
-    while(userInput!= "5")
+    while(userInput!= "6")
     {
         wxToImgMenuDisplay();
         getline(cin,userInput);
@@ -123,7 +127,12 @@ int ui::wxToImgMenu()
             settings.loadWXFileSettings();
             //load settings from file
         }
-        else if(userInput=="5"||userInput == "Return To Main Menu" || userInput == "5.Return To Main Menu")
+        else if(userInput=="5"||userInput == "Display Current Settings" || userInput == "5.Display Current Settings")
+        {
+            settings.printWXSettings();
+            break;
+        }
+        else if(userInput=="6"||userInput == "Return To Main Menu" || userInput == "6.Return To Main Menu")
         {
             cout<<"Returning To Main Menu"<<endl;
             break;
@@ -136,6 +145,7 @@ int ui::wxToImgMenu()
 }
 int ui::SDRMenuDisplay()
 {
+    cout<<endl;
     cout<<"SDR Menu"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"1.Run SDR FM Test"<<endl;
@@ -186,6 +196,7 @@ int ui::SDRMenu()
 
 int ui::satTrackingMenuDisplay()
 {
+    cout<<endl;
     cout<<"Tracking Software Menu"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"1.Run GPredict"<<endl;
@@ -230,6 +241,7 @@ int ui::satTrackingMenu()
 
 int ui::wxToImgSettingsMenuDisplay()
 {
+    cout<<endl;
     cout<<"WXTOIMG Menu"<<endl;
     cout<<"------------------------------"<<endl;
     cout<<"1.Edit Pass Direction"<<endl;
@@ -238,7 +250,6 @@ int ui::wxToImgSettingsMenuDisplay()
     cout<<"4.Edit SoundCard Frequency"<<endl;
     cout<<"5.Edit Satellite"<<endl;
     cout<<"6.Return To WXTOIMG Menu"<<endl;
-
 }
 
 int ui::wxToImgSettingsMenu()
@@ -320,6 +331,7 @@ int ui::wxToImgSettingsMenu()
             ss>>x;
             settings.setWXSatType(x);
         }
+
         else if(userInput=="6"||userInput == "Return To WXTOIMG Menu" || userInput == "6.Return To WXTOIMG Menu")
         {
             cout << "Returning To WXTOIMG Menu" << endl;

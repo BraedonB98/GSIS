@@ -5,6 +5,10 @@
 #ifndef MAINCODE_SETTINGS_H
 #define MAINCODE_SETTINGS_H
 
+#include <iostream>
+
+using namespace std;
+
 struct WXTOIMGSettings{
     /* What direction is the satellite passing?
      * 0 = northbound pass
@@ -47,6 +51,23 @@ struct WXTOIMGSettings{
     int satType;
 
 };
+struct SDRSettings{
+    //put future SDR Settings here
+};
+struct trackingSettings{
+    //What port the tracking software thinks a radio is on
+    int vRadioPort;
+    //What port the tracking software thinks a rotor is on
+    int vRotorPort;
+    //Contains location of host. Default to local host if the gpredict software is running on same computer as Main code(this code)
+    string hostLocation = "localhost";
+    //Contains location information for usb port the rotor is connected to
+    string rotorLocation;
+    //Contains baud rate of rotor
+    int rotorBaud;
+
+};
+
 class Settings {
 public:
     Settings();
