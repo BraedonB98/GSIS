@@ -14,8 +14,11 @@ int main() {
     cout<<"Testing Saving Settings"<<endl;
     TestSettings.loadWXFileSettings();
     TestSettings.saveWXFileSettings();
-    cout<<"Testing printWXSettings()"<<endl;
+    TestSettings.setWXSCFrequency(11025);
+    cout<<"Testing printWXSettings()"<<endl<<endl;
     TestSettings.printWXSettings();
+    cout<<"Testing Terminal Command"<<endl;
+    TestSettings.getWXTOIMGTerminalString("0907291428noaa-18","test");
     cout << "Tests Complete" << endl;
     return 0;
 }

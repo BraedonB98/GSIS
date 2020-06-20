@@ -75,6 +75,7 @@ public:
     void printWXSettings();
     WXTOIMGSettings loadWXFileSettings();
     void saveWXFileSettings();
+    string getWXTOIMGTerminalString(string inputFile, string outputFile);
 
     //getters and setters are at the bottom of Settings.cpp
     WXTOIMGSettings getWXSetting();

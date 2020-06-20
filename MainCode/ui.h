@@ -25,6 +25,8 @@ public:
     int wxToImgSettingsMenuDisplay();
     int wxToImgSettingsMenu();
 
+
+
 };
 
 

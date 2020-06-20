@@ -15,6 +15,7 @@ using namespace std;
 ui::ui()
 {
     cout<<"Launching Program"<<endl;
+    settings.loadWXFileSettings();
 }
 ui::~ui()
 {
@@ -100,12 +101,17 @@ int ui::wxToImgMenu()
         {
             char command[200] = "";// allows for file names up to 55 char long
             cout<<"Running WXTOIMG"<<endl;
-            cout<<"Enter File Name"<<endl;
+            cout<<"Enter Input File Name"<<endl;
             getline(cin,userInput);
-            int n = userInput.length();
-            char uI[n + 1];
-            strcpy(uI, userInput.c_str());
-            sprintf(command, "cd \n cd /home/braedonb98/GSIS/WXTOIMGTestFIles \n ls \n wxtoimg -S  -h -t n %s.wav > %s.png" ,uI,uI);// 88 char size before file name added
+            string inputFile = userInput;
+            cout<<"Enter Output File Name"<<endl;
+            getline(cin,userInput);
+            string outputFile = userInput;
+            string terminalCmd = settings.getWXTOIMGTerminalString(inputFile,outputFile);
+            int n = terminalCmd.length();
+            char tC[n + 1];
+            strcpy(tC, terminalCmd.c_str());
+            sprintf(command, "%s" ,tC);// 88 char size before file name added
             cout<<command<<endl;
             system(command);
         }

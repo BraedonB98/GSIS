@@ -16,9 +16,8 @@ Settings::Settings() {
     WXSettings.passDirection = 0;
     WXSettings.channelImage = 0;
     WXSettings.enhancement = 0; //May want to change this later when I find an enhancement that looks nice(probably one with color)
-    WXSettings.SCFrequency = 48000; //May need to change to default wxtoimg later
+    WXSettings.SCFrequency = 11025; //May need to change to default wxtoimg later
     WXSettings.satType = 0;
-    cout<<"Loading Default Settings"<<endl;
 }
 
 Settings::~Settings() {}
@@ -158,6 +157,118 @@ void Settings::saveWXFileSettings() {
     WXSettingFile << "Satellite\n"<< (int)WXSettings.satType<<endl;
     WXSettingFile.close();
 }
+string Settings::getWXTOIMGTerminalString(string inputFile, string outputFile){
+    string runCmd;
+    runCmd = "cd \n cd GSIS/WAVFilesFromGNURadio \n wxtoimg ";
+
+    //pass direction
+
+    if(WXSettings.passDirection == 0){//north bound pass
+        runCmd = runCmd + "-N ";
+    }
+    else{//south bound pass
+        runCmd = runCmd + "-S ";
+    }
+
+    //channel image
+
+    if(WXSettings.channelImage == 0){//both
+        //dont change runcmd value so it runs both;
+    }
+    else if (WXSettings.channelImage == 1){//channel a only
+        runCmd = runCmd + "-a ";
+    }
+    else{//channel b only
+        runCmd = runCmd + "-b ";
+    }
+
+    //enhancement
+    if(WXSettings.enhancement == 0){
+        //no enhancement
+    }
+    else if(WXSettings.enhancement == 1){
+        runCmd = runCmd + "-e histeq ";
+    }
+    else if(WXSettings.enhancement == 2){
+        runCmd = runCmd + "-e MSA ";
+    }
+    else if(WXSettings.enhancement == 3){
+        runCmd = runCmd + "-e MCIR ";
+    }
+    else if(WXSettings.enhancement == 4){
+        runCmd = runCmd + "-e HVCT ";
+    }
+    else if(WXSettings.enhancement == 5){
+        runCmd = runCmd + "-e sea ";
+    }
+    else if(WXSettings.enhancement == 6){
+        runCmd = runCmd + "-e ZA ";
+    }
+
+    //sound card frequency
+
+    stringstream ss;
+    ss << WXSettings.SCFrequency;
+    runCmd = runCmd + "-f " + ss.str();
+
+    if (WXSettings.satType == 0)
+    {
+        //do nothing for autodetect
+    }
+    else if (WXSettings.satType == 1)//if NOAA
+    {
+        runCmd = runCmd + "-t n ";
+    }else if (WXSettings.satType == 2)//if GOES
+    {
+        runCmd = runCmd + "-t g ";
+    }
+    else if (WXSettings.satType == 3)//if Meteor2
+    {
+        runCmd = runCmd + "-t 2 ";
+    }
+    else if (WXSettings.satType == 4)//if Meteor3
+    {
+        runCmd = runCmd + "-t m ";
+    }
+    else if (WXSettings.satType == 5)//if Resurs
+    {
+        runCmd = runCmd + "-t r ";
+    }
+    else if (WXSettings.satType == 6)//if SICH1M
+    {
+        runCmd = runCmd + "-t h ";
+    }
+    else if (WXSettings.satType == 7)//if Sick
+    {
+        runCmd = runCmd + "-t s ";
+    }
+    else if (WXSettings.satType == 8)//if Okean
+    {
+        runCmd = runCmd + "-t o ";
+    }
+    else if (WXSettings.satType == 9)//if Meteosat
+    {
+        runCmd = runCmd + "-t e ";
+    }
+    else if (WXSettings.satType == 10)//if GMS
+    {
+        runCmd = runCmd + "-t j ";
+    }
+    else if (WXSettings.satType == 11)//if MTSAT
+    {
+        runCmd = runCmd + "-t k ";
+    }
+    else if (WXSettings.satType == 12)//if other
+    {
+        runCmd = runCmd + "-t x ";
+    }
+
+
+    runCmd = runCmd + " " + inputFile +".wav " + outputFile +  ".png";
+    cout<<runCmd<<endl;
+    return(runCmd);
+}
+
 
 //All Getters and Setters Bellow.
 WXTOIMGSettings Settings::getWXSetting() {

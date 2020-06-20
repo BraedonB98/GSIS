@@ -3,8 +3,8 @@ Pass Direction
 Channel Image
 0
 Enhancement
-0
+2
 SoundCard Frequency
-48000
+11025
 Satellite
 0
