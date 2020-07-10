@@ -53,14 +53,14 @@ blocks:
     label0: NOAA-15
     label1: NOAA-18
     label2: NOAA-19
-    label3: ''
+    label3: GOES-16
     label4: ''
     labels: '[]'
-    num_opts: '3'
+    num_opts: '5'
     option1: '139.9125'
     option2: '137.1000'
-    option3: '3'
-    option4: '4'
+    option3: '1694.1'
+    option4: '139.5'
     options: '[0, 1, 2]'
     orient: Qt.QHBoxLayout
     type: real

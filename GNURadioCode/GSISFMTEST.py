@@ -204,9 +204,9 @@ class GSISFMTEST(gr.top_block, Qt.QWidget):
         self.osmosdr_source_1.set_sample_rate(samp_rate)
         self.osmosdr_source_1.set_center_freq(sat*1e6, 0)
         self.osmosdr_source_1.set_freq_corr(0, 0)
-        self.osmosdr_source_1.set_gain(5, 0)
-        self.osmosdr_source_1.set_if_gain(20, 0)
-        self.osmosdr_source_1.set_bb_gain(20, 0)
+        self.osmosdr_source_1.set_gain(2, 0)
+        self.osmosdr_source_1.set_if_gain(5, 0)
+        self.osmosdr_source_1.set_bb_gain(5, 0)
         self.osmosdr_source_1.set_antenna('', 0)
         self.osmosdr_source_1.set_bandwidth(200000, 0)
         self.low_pass_filter_0 = filter.fir_filter_ccf(

@@ -115,8 +115,8 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="SatTest">
-				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/SatTest" prefix_auto="0" extension_auto="0"/>
+			<Target title="RigControlTest">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/RigControlTest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -131,14 +131,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 SatTest"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 RigControlTest"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="SatTest/fast">
-				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/SatTest" prefix_auto="0" extension_auto="0"/>
+			<Target title="RigControlTest/fast">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/RigControlTest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -153,7 +153,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 SatTest/fast"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 RigControlTest/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -170,31 +170,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RigControl.cpp">
+			<Option target="MainCode"/>
+			<Option target="SettingsTest"/>
+			<Option target="RigControlTest"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RigControl.h">
+			<Option target="MainCode"/>
+			<Option target="SettingsTest"/>
+			<Option target="RigControlTest"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RigControlTest.cpp">
+			<Option target="RigControlTest"/>
+		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.cpp">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
+			<Option target="RigControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.h">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
+			<Option target="RigControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/main.cpp">
 			<Option target="MainCode"/>
-		</Unit>
-		<Unit filename="/home/braedonb98/GSIS/MainCode/satData.cpp">
-			<Option target="MainCode"/>
-			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
-		</Unit>
-		<Unit filename="/home/braedonb98/GSIS/MainCode/satData.h">
-			<Option target="MainCode"/>
-			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
-		</Unit>
-		<Unit filename="/home/braedonb98/GSIS/MainCode/satDataTest.cpp">
-			<Option target="SatTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/settingsTestFile.cpp">
 			<Option target="SettingsTest"/>
@@ -202,12 +202,12 @@
 		<Unit filename="/home/braedonb98/GSIS/MainCode/ui.cpp">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
+			<Option target="RigControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/ui.h">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
-			<Option target="SatTest"/>
+			<Option target="RigControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/braedonb98/GSIS/MainCode/RigControl.cpp" "/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir/RigControl.cpp.o"
   "/home/braedonb98/GSIS/MainCode/Settings.cpp" "/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir/Settings.cpp.o"
-  "/home/braedonb98/GSIS/MainCode/satData.cpp" "/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir/satData.cpp.o"
   "/home/braedonb98/GSIS/MainCode/settingsTestFile.cpp" "/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o"
   "/home/braedonb98/GSIS/MainCode/ui.cpp" "/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir/ui.cpp.o"
   )

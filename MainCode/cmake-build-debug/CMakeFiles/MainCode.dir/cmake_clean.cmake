@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MainCode.dir/RigControl.cpp.o"
   "CMakeFiles/MainCode.dir/Settings.cpp.o"
   "CMakeFiles/MainCode.dir/main.cpp.o"
-  "CMakeFiles/MainCode.dir/satData.cpp.o"
   "CMakeFiles/MainCode.dir/ui.cpp.o"
   "MainCode"
   "MainCode.pdb"

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/SettingsTest.dir/RigControl.cpp.o"
   "CMakeFiles/SettingsTest.dir/Settings.cpp.o"
-  "CMakeFiles/SettingsTest.dir/satData.cpp.o"
   "CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o"
   "CMakeFiles/SettingsTest.dir/ui.cpp.o"
   "SettingsTest"

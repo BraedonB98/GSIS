@@ -6,17 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/braedonb98/GSIS/MainCode/Settings.h
-iostream
--
+/home/braedonb98/GSIS/MainCode/RigControl.cpp
+RigControl.h
+/home/braedonb98/GSIS/MainCode/RigControl.h
 
-/home/braedonb98/GSIS/MainCode/settingsTestFile.cpp
-iostream
--
-ui.h
-/home/braedonb98/GSIS/MainCode/ui.h
+/home/braedonb98/GSIS/MainCode/RigControl.h
+
+/home/braedonb98/GSIS/MainCode/Settings.cpp
 Settings.h
 /home/braedonb98/GSIS/MainCode/Settings.h
+iostream
+-
+fstream
+-
+iomanip
+-
+stdio.h
+-
+stdlib.h
+-
+bits/stdc++.h
+-
+
+/home/braedonb98/GSIS/MainCode/Settings.h
+iostream
+-
 
 /home/braedonb98/GSIS/MainCode/ui.cpp
 ui.h

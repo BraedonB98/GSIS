@@ -83,22 +83,9 @@ CMakeFiles/SettingsTest.dir/ui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SettingsTest.dir/ui.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/ui.cpp -o CMakeFiles/SettingsTest.dir/ui.cpp.s
 
-CMakeFiles/SettingsTest.dir/satData.cpp.o: CMakeFiles/SettingsTest.dir/flags.make
-CMakeFiles/SettingsTest.dir/satData.cpp.o: ../satData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SettingsTest.dir/satData.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SettingsTest.dir/satData.cpp.o -c /home/braedonb98/GSIS/MainCode/satData.cpp
-
-CMakeFiles/SettingsTest.dir/satData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SettingsTest.dir/satData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/GSIS/MainCode/satData.cpp > CMakeFiles/SettingsTest.dir/satData.cpp.i
-
-CMakeFiles/SettingsTest.dir/satData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SettingsTest.dir/satData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/satData.cpp -o CMakeFiles/SettingsTest.dir/satData.cpp.s
-
 CMakeFiles/SettingsTest.dir/Settings.cpp.o: CMakeFiles/SettingsTest.dir/flags.make
 CMakeFiles/SettingsTest.dir/Settings.cpp.o: ../Settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SettingsTest.dir/Settings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SettingsTest.dir/Settings.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SettingsTest.dir/Settings.cpp.o -c /home/braedonb98/GSIS/MainCode/Settings.cpp
 
 CMakeFiles/SettingsTest.dir/Settings.cpp.i: cmake_force
@@ -109,20 +96,33 @@ CMakeFiles/SettingsTest.dir/Settings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SettingsTest.dir/Settings.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/Settings.cpp -o CMakeFiles/SettingsTest.dir/Settings.cpp.s
 
+CMakeFiles/SettingsTest.dir/RigControl.cpp.o: CMakeFiles/SettingsTest.dir/flags.make
+CMakeFiles/SettingsTest.dir/RigControl.cpp.o: ../RigControl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SettingsTest.dir/RigControl.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SettingsTest.dir/RigControl.cpp.o -c /home/braedonb98/GSIS/MainCode/RigControl.cpp
+
+CMakeFiles/SettingsTest.dir/RigControl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SettingsTest.dir/RigControl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/braedonb98/GSIS/MainCode/RigControl.cpp > CMakeFiles/SettingsTest.dir/RigControl.cpp.i
+
+CMakeFiles/SettingsTest.dir/RigControl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SettingsTest.dir/RigControl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/braedonb98/GSIS/MainCode/RigControl.cpp -o CMakeFiles/SettingsTest.dir/RigControl.cpp.s
+
 # Object files for target SettingsTest
 SettingsTest_OBJECTS = \
 "CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o" \
 "CMakeFiles/SettingsTest.dir/ui.cpp.o" \
-"CMakeFiles/SettingsTest.dir/satData.cpp.o" \
-"CMakeFiles/SettingsTest.dir/Settings.cpp.o"
+"CMakeFiles/SettingsTest.dir/Settings.cpp.o" \
+"CMakeFiles/SettingsTest.dir/RigControl.cpp.o"
 
 # External object files for target SettingsTest
 SettingsTest_EXTERNAL_OBJECTS =
 
 SettingsTest: CMakeFiles/SettingsTest.dir/settingsTestFile.cpp.o
 SettingsTest: CMakeFiles/SettingsTest.dir/ui.cpp.o
-SettingsTest: CMakeFiles/SettingsTest.dir/satData.cpp.o
 SettingsTest: CMakeFiles/SettingsTest.dir/Settings.cpp.o
+SettingsTest: CMakeFiles/SettingsTest.dir/RigControl.cpp.o
 SettingsTest: CMakeFiles/SettingsTest.dir/build.make
 SettingsTest: CMakeFiles/SettingsTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SettingsTest"

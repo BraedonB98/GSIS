@@ -90,9 +90,9 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
         self.settingsTab.addTab(self.settingsTab_widget_0, 'Settings')
         self.top_grid_layout.addWidget(self.settingsTab)
         # Create the options list
-        self._sat_options = (137.6200, 139.9125, 137.1000, )
+        self._sat_options = (137.6200, 139.9125, 137.1000, 1694.1, 139.5, )
         # Create the labels list
-        self._sat_labels = ('NOAA-15', 'NOAA-18', 'NOAA-19', )
+        self._sat_labels = ('NOAA-15', 'NOAA-18', 'NOAA-19', 'GOES-16', '', )
         # Create the combo box
         # Create the radio buttons
         self._sat_group_box = Qt.QGroupBox('Satellite' + ": ")
