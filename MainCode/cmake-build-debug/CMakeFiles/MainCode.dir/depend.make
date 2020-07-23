@@ -4,6 +4,9 @@
 CMakeFiles/MainCode.dir/RigControl.cpp.o: ../RigControl.cpp
 CMakeFiles/MainCode.dir/RigControl.cpp.o: ../RigControl.h
 
+CMakeFiles/MainCode.dir/RotorControl.cpp.o: ../RotorControl.cpp
+CMakeFiles/MainCode.dir/RotorControl.cpp.o: ../RotorControl.h
+
 CMakeFiles/MainCode.dir/Settings.cpp.o: ../Settings.cpp
 CMakeFiles/MainCode.dir/Settings.cpp.o: ../Settings.h
 

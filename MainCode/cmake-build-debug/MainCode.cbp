@@ -27,6 +27,16 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="MainCode">
 				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/MainCode" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
@@ -159,11 +169,45 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="RotorControlTest">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/RotorControlTest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 RotorControlTest"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RotorControlTest/fast">
+				<Option output="/home/braedonb98/GSIS/MainCode/cmake-build-debug/RotorControlTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/braedonb98/GSIS/MainCode/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 RotorControlTest/fast"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/braedonb98/GSIS/MainCode/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -183,15 +227,28 @@
 		<Unit filename="/home/braedonb98/GSIS/MainCode/RigControlTest.cpp">
 			<Option target="RigControlTest"/>
 		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RotorControl.cpp">
+			<Option target="MainCode"/>
+			<Option target="RotorControlTest"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RotorControl.h">
+			<Option target="MainCode"/>
+			<Option target="RotorControlTest"/>
+		</Unit>
+		<Unit filename="/home/braedonb98/GSIS/MainCode/RotorControlTest.cpp">
+			<Option target="RotorControlTest"/>
+		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.cpp">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
 			<Option target="RigControlTest"/>
+			<Option target="RotorControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/Settings.h">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
 			<Option target="RigControlTest"/>
+			<Option target="RotorControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/main.cpp">
 			<Option target="MainCode"/>
@@ -203,11 +260,13 @@
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
 			<Option target="RigControlTest"/>
+			<Option target="RotorControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/ui.h">
 			<Option target="MainCode"/>
 			<Option target="SettingsTest"/>
 			<Option target="RigControlTest"/>
+			<Option target="RotorControlTest"/>
 		</Unit>
 		<Unit filename="/home/braedonb98/GSIS/MainCode/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

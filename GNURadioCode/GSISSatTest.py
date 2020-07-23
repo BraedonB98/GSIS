@@ -1,13 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-
-#
-# SPDX-License-Identifier: GPL-3.0
-#
+##################################################
 # GNU Radio Python Flow Graph
 # Title: Ground Station Integration Software
 # Author: Braedon Bellamy
-# GNU Radio version: 3.8.1.0
+# Generated: Sun Jul 12 20:45:56 2020
+##################################################
 
 from distutils.version import StrictVersion
 
@@ -19,26 +17,27 @@ if __name__ == '__main__':
             x11 = ctypes.cdll.LoadLibrary('libX11.so')
             x11.XInitThreads()
         except:
-            print("Warning: failed to XInitThreads()")
+            print "Warning: failed to XInitThreads()"
 
 from PyQt5 import Qt
+from PyQt5 import Qt, QtCore
 from PyQt5.QtCore import QObject, pyqtSlot
-from gnuradio import qtgui
-from gnuradio.filter import firdes
-import sip
 from gnuradio import analog
 from gnuradio import audio
 from gnuradio import blocks
+from gnuradio import eng_notation
 from gnuradio import filter
 from gnuradio import gr
-import sys
-import signal
-from argparse import ArgumentParser
-from gnuradio.eng_arg import eng_float, intx
-from gnuradio import eng_notation
+from gnuradio import qtgui
+from gnuradio.eng_option import eng_option
+from gnuradio.filter import firdes
+from optparse import OptionParser
 import osmosdr
+import sip
+import sys
 import time
 from gnuradio import qtgui
+
 
 class GSISSatTest(gr.top_block, Qt.QWidget):
 
@@ -65,18 +64,15 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
 
         self.settings = Qt.QSettings("GNU Radio", "GSISSatTest")
 
-        try:
-            if StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
-                self.restoreGeometry(self.settings.value("geometry").toByteArray())
-            else:
-                self.restoreGeometry(self.settings.value("geometry"))
-        except:
-            pass
+        if StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
+            self.restoreGeometry(self.settings.value("geometry").toByteArray())
+        else:
+            self.restoreGeometry(self.settings.value("geometry", type=QtCore.QByteArray))
 
         ##################################################
         # Variables
         ##################################################
-        self.sat = sat = 137.6200
+        self.sat = sat = 137.62
         self.samp_rate = samp_rate = 4e6
 
         ##################################################
@@ -88,14 +84,10 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
         self.settingsTab_grid_layout_0 = Qt.QGridLayout()
         self.settingsTab_layout_0.addLayout(self.settingsTab_grid_layout_0)
         self.settingsTab.addTab(self.settingsTab_widget_0, 'Settings')
-        self.top_grid_layout.addWidget(self.settingsTab)
-        # Create the options list
-        self._sat_options = (137.6200, 139.9125, 137.1000, 1694.1, 139.5, )
-        # Create the labels list
-        self._sat_labels = ('NOAA-15', 'NOAA-18', 'NOAA-19', 'GOES-16', '', )
-        # Create the combo box
-        # Create the radio buttons
-        self._sat_group_box = Qt.QGroupBox('Satellite' + ": ")
+        self.top_layout.addWidget(self.settingsTab)
+        self._sat_options = (137.62, 139.9125, 137.1000, 1694.1, 105.9, )
+        self._sat_labels = ('NOAA-15', 'NOAA-18', 'NOAA-19', 'GOES-16', 'FMTest', )
+        self._sat_group_box = Qt.QGroupBox('Satellite')
         self._sat_box = Qt.QHBoxLayout()
         class variable_chooser_button_group(Qt.QButtonGroup):
             def __init__(self, parent=None):
@@ -105,38 +97,51 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
                 self.button(button_id).setChecked(True)
         self._sat_button_group = variable_chooser_button_group()
         self._sat_group_box.setLayout(self._sat_box)
-        for i, _label in enumerate(self._sat_labels):
-            radio_button = Qt.QRadioButton(_label)
-            self._sat_box.addWidget(radio_button)
-            self._sat_button_group.addButton(radio_button, i)
+        for i, label in enumerate(self._sat_labels):
+        	radio_button = Qt.QRadioButton(label)
+        	self._sat_box.addWidget(radio_button)
+        	self._sat_button_group.addButton(radio_button, i)
         self._sat_callback = lambda i: Qt.QMetaObject.invokeMethod(self._sat_button_group, "updateButtonChecked", Qt.Q_ARG("int", self._sat_options.index(i)))
         self._sat_callback(self.sat)
         self._sat_button_group.buttonClicked[int].connect(
-            lambda i: self.set_sat(self._sat_options[i]))
+        	lambda i: self.set_sat(self._sat_options[i]))
         self.settingsTab_layout_0.addWidget(self._sat_group_box)
-        self.rational_resampler_xxx_1 = filter.rational_resampler_ccc(
-                interpolation=1,
-                decimation=8,
-                taps=None,
-                fractional_bw=None)
-        self.rational_resampler_xxx_0 = filter.rational_resampler_ccc(
-                interpolation=48,
-                decimation=50,
-                taps=None,
-                fractional_bw=None)
-        self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
-            1024, #size
-            firdes.WIN_BLACKMAN_hARRIS, #wintype
-            sat*1e6, #fc
-            samp_rate, #bw
-            "", #name
-            1 #number of inputs
+        self.hackRF = osmosdr.source( args="numchan=" + str(1) + " " + '' )
+        self.hackRF.set_time_unknown_pps(osmosdr.time_spec_t())
+        self.hackRF.set_sample_rate(samp_rate)
+        self.hackRF.set_center_freq(sat*1e6, 0)
+        self.hackRF.set_freq_corr(0, 0)
+        self.hackRF.set_dc_offset_mode(2, 0)
+        self.hackRF.set_iq_balance_mode(2, 0)
+        self.hackRF.set_gain_mode(False, 0)
+        self.hackRF.set_gain(8, 0)
+        self.hackRF.set_if_gain(20, 0)
+        self.hackRF.set_bb_gain(20, 0)
+        self.hackRF.set_antenna('', 0)
+        self.hackRF.set_bandwidth(100000, 0)
+
+        self.analog_wfm_rcv_0 = analog.wfm_rcv(
+        	quad_rate=48e4,
+        	audio_decimation=10,
         )
-        self.qtgui_waterfall_sink_x_0.set_update_time(0.10)
-        self.qtgui_waterfall_sink_x_0.enable_grid(False)
-        self.qtgui_waterfall_sink_x_0.enable_axis_labels(True)
+        self.WavSink = blocks.wavfile_sink('/home/braedonb98/GSIS/WXTOIMGFIles/GSISSatTest', 1, 48000, 8)
+        self.WaterfallSink = qtgui.waterfall_sink_c(
+        	1024, #size
+        	firdes.WIN_BLACKMAN_hARRIS, #wintype
+        	sat*1e6, #fc
+        	samp_rate, #bw
+        	"", #name
+                1 #number of inputs
+        )
+        self.WaterfallSink.set_update_time(0.10)
+        self.WaterfallSink.enable_grid(False)
+        self.WaterfallSink.enable_axis_labels(True)
 
+        if not True:
+          self.WaterfallSink.disable_legend()
 
+        if "complex" == "float" or "complex" == "msg_float":
+          self.WaterfallSink.set_plot_pos_half(not True)
 
         labels = ['', '', '', '', '',
                   '', '', '', '', '']
@@ -144,102 +149,83 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
                   0, 0, 0, 0, 0]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in range(1):
+        for i in xrange(1):
             if len(labels[i]) == 0:
-                self.qtgui_waterfall_sink_x_0.set_line_label(i, "Data {0}".format(i))
+                self.WaterfallSink.set_line_label(i, "Data {0}".format(i))
             else:
-                self.qtgui_waterfall_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_waterfall_sink_x_0.set_color_map(i, colors[i])
-            self.qtgui_waterfall_sink_x_0.set_line_alpha(i, alphas[i])
+                self.WaterfallSink.set_line_label(i, labels[i])
+            self.WaterfallSink.set_color_map(i, colors[i])
+            self.WaterfallSink.set_line_alpha(i, alphas[i])
 
-        self.qtgui_waterfall_sink_x_0.set_intensity_range(-140, 10)
+        self.WaterfallSink.set_intensity_range(-140, 10)
 
-        self._qtgui_waterfall_sink_x_0_win = sip.wrapinstance(self.qtgui_waterfall_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_waterfall_sink_x_0_win)
-        self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
-            1024, #size
-            firdes.WIN_BLACKMAN_hARRIS, #wintype
-            sat*1e6, #fc
-            samp_rate, #bw
-            "", #name
-            1
+        self._WaterfallSink_win = sip.wrapinstance(self.WaterfallSink.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._WaterfallSink_win)
+        self.Resampler = filter.rational_resampler_ccc(
+                interpolation=1,
+                decimation=8,
+                taps=None,
+                fractional_bw=None,
         )
-        self.qtgui_freq_sink_x_0.set_update_time(0.10)
-        self.qtgui_freq_sink_x_0.set_y_axis(-140, 10)
-        self.qtgui_freq_sink_x_0.set_y_label('Relative Gain', 'dB')
-        self.qtgui_freq_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
-        self.qtgui_freq_sink_x_0.enable_autoscale(False)
-        self.qtgui_freq_sink_x_0.enable_grid(False)
-        self.qtgui_freq_sink_x_0.set_fft_average(1.0)
-        self.qtgui_freq_sink_x_0.enable_axis_labels(True)
-        self.qtgui_freq_sink_x_0.enable_control_panel(False)
+        self.LowPassFilter = filter.fir_filter_ccf(1, firdes.low_pass(
+        	1, samp_rate, 10e3, 2e6, firdes.WIN_HAMMING, 6.76))
+        self.FreqSink = qtgui.freq_sink_c(
+        	1024, #size
+        	firdes.WIN_BLACKMAN_hARRIS, #wintype
+        	sat*1e6, #fc
+        	samp_rate, #bw
+        	"", #name
+        	1 #number of inputs
+        )
+        self.FreqSink.set_update_time(0.10)
+        self.FreqSink.set_y_axis(-140, 10)
+        self.FreqSink.set_y_label('Relative Gain', 'dB')
+        self.FreqSink.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
+        self.FreqSink.enable_autoscale(False)
+        self.FreqSink.enable_grid(False)
+        self.FreqSink.set_fft_average(1.0)
+        self.FreqSink.enable_axis_labels(True)
+        self.FreqSink.enable_control_panel(False)
 
+        if not True:
+          self.FreqSink.disable_legend()
 
+        if "complex" == "float" or "complex" == "msg_float":
+          self.FreqSink.set_plot_pos_half(not True)
 
         labels = ['', '', '', '', '',
-            '', '', '', '', '']
+                  '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
+                  1, 1, 1, 1, 1]
         colors = ["blue", "red", "green", "black", "cyan",
-            "magenta", "yellow", "dark red", "dark green", "dark blue"]
+                  "magenta", "yellow", "dark red", "dark green", "dark blue"]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in range(1):
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
             if len(labels[i]) == 0:
-                self.qtgui_freq_sink_x_0.set_line_label(i, "Data {0}".format(i))
+                self.FreqSink.set_line_label(i, "Data {0}".format(i))
             else:
-                self.qtgui_freq_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_freq_sink_x_0.set_line_width(i, widths[i])
-            self.qtgui_freq_sink_x_0.set_line_color(i, colors[i])
-            self.qtgui_freq_sink_x_0.set_line_alpha(i, alphas[i])
+                self.FreqSink.set_line_label(i, labels[i])
+            self.FreqSink.set_line_width(i, widths[i])
+            self.FreqSink.set_line_color(i, colors[i])
+            self.FreqSink.set_line_alpha(i, alphas[i])
 
-        self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_freq_sink_x_0_win)
-        self.osmosdr_source_1 = osmosdr.source(
-            args="numchan=" + str(1) + " " + ""
-        )
-        self.osmosdr_source_1.set_time_unknown_pps(osmosdr.time_spec_t())
-        self.osmosdr_source_1.set_sample_rate(samp_rate)
-        self.osmosdr_source_1.set_center_freq(sat*1e6, 0)
-        self.osmosdr_source_1.set_freq_corr(0, 0)
-        self.osmosdr_source_1.set_gain(8, 0)
-        self.osmosdr_source_1.set_if_gain(20, 0)
-        self.osmosdr_source_1.set_bb_gain(20, 0)
-        self.osmosdr_source_1.set_antenna('', 0)
-        self.osmosdr_source_1.set_bandwidth(100000, 0)
-        self.low_pass_filter_0 = filter.fir_filter_ccf(
-            1,
-            firdes.low_pass(
-                1,
-                samp_rate,
-                10e3,
-                2e6,
-                firdes.WIN_HAMMING,
-                6.76))
-        self.dc_blocker_xx_0 = filter.dc_blocker_cc(1024, True)
-        self.blocks_wavfile_sink_0 = blocks.wavfile_sink('/home/braedonb98/GSIS/WAVFilesFromGNURadio/Wxtoimginput.wav', 1, 48000, 8)
-        self.audio_sink_0 = audio.sink(48000, '', True)
-        self.analog_wfm_rcv_0 = analog.wfm_rcv(
-        	quad_rate=48e4,
-        	audio_decimation=10,
-        )
-
-
+        self._FreqSink_win = sip.wrapinstance(self.FreqSink.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._FreqSink_win)
+        self.DCBlocker = filter.dc_blocker_cc(1024, True)
+        self.AudioSink = audio.sink(48000, '', True)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_wfm_rcv_0, 0), (self.audio_sink_0, 0))
-        self.connect((self.analog_wfm_rcv_0, 0), (self.blocks_wavfile_sink_0, 0))
-        self.connect((self.dc_blocker_xx_0, 0), (self.qtgui_freq_sink_x_0, 0))
-        self.connect((self.dc_blocker_xx_0, 0), (self.qtgui_waterfall_sink_x_0, 0))
-        self.connect((self.dc_blocker_xx_0, 0), (self.rational_resampler_xxx_1, 0))
-        self.connect((self.low_pass_filter_0, 0), (self.rational_resampler_xxx_0, 0))
-        self.connect((self.osmosdr_source_1, 0), (self.dc_blocker_xx_0, 0))
-        self.connect((self.rational_resampler_xxx_0, 0), (self.analog_wfm_rcv_0, 0))
-        self.connect((self.rational_resampler_xxx_1, 0), (self.low_pass_filter_0, 0))
+        self.connect((self.DCBlocker, 0), (self.FreqSink, 0))
+        self.connect((self.DCBlocker, 0), (self.Resampler, 0))
+        self.connect((self.DCBlocker, 0), (self.WaterfallSink, 0))
+        self.connect((self.LowPassFilter, 0), (self.analog_wfm_rcv_0, 0))
+        self.connect((self.Resampler, 0), (self.LowPassFilter, 0))
+        self.connect((self.analog_wfm_rcv_0, 0), (self.AudioSink, 0))
+        self.connect((self.analog_wfm_rcv_0, 0), (self.WavSink, 0))
+        self.connect((self.hackRF, 0), (self.DCBlocker, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "GSISSatTest")
@@ -252,20 +238,19 @@ class GSISSatTest(gr.top_block, Qt.QWidget):
     def set_sat(self, sat):
         self.sat = sat
         self._sat_callback(self.sat)
-        self.osmosdr_source_1.set_center_freq(self.sat*1e6, 0)
-        self.qtgui_freq_sink_x_0.set_frequency_range(self.sat*1e6, self.samp_rate)
-        self.qtgui_waterfall_sink_x_0.set_frequency_range(self.sat*1e6, self.samp_rate)
+        self.hackRF.set_center_freq(self.sat*1e6, 0)
+        self.WaterfallSink.set_frequency_range(self.sat*1e6, self.samp_rate)
+        self.FreqSink.set_frequency_range(self.sat*1e6, self.samp_rate)
 
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 10e3, 2e6, firdes.WIN_HAMMING, 6.76))
-        self.osmosdr_source_1.set_sample_rate(self.samp_rate)
-        self.qtgui_freq_sink_x_0.set_frequency_range(self.sat*1e6, self.samp_rate)
-        self.qtgui_waterfall_sink_x_0.set_frequency_range(self.sat*1e6, self.samp_rate)
-
+        self.hackRF.set_sample_rate(self.samp_rate)
+        self.WaterfallSink.set_frequency_range(self.sat*1e6, self.samp_rate)
+        self.LowPassFilter.set_taps(firdes.low_pass(1, self.samp_rate, 10e3, 2e6, firdes.WIN_HAMMING, 6.76))
+        self.FreqSink.set_frequency_range(self.sat*1e6, self.samp_rate)
 
 
 def main(top_block_cls=GSISSatTest, options=None):
@@ -278,16 +263,6 @@ def main(top_block_cls=GSISSatTest, options=None):
     tb = top_block_cls()
     tb.start()
     tb.show()
-
-    def sig_handler(sig=None, frame=None):
-        Qt.QApplication.quit()
-
-    signal.signal(signal.SIGINT, sig_handler)
-    signal.signal(signal.SIGTERM, sig_handler)
-
-    timer = Qt.QTimer()
-    timer.start(500)
-    timer.timeout.connect(lambda: None)
 
     def quitting():
         tb.stop()

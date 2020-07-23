@@ -6,17 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/braedonb98/GSIS/MainCode/RigControl.cpp
-RigControl.h
-/home/braedonb98/GSIS/MainCode/RigControl.h
-stdio.h
--
-string.h
--
-unistd.h
--
-stdlib.h
--
+/home/braedonb98/GSIS/MainCode/RotorControl.cpp
+RotorControl.h
+/home/braedonb98/GSIS/MainCode/RotorControl.h
 
-/home/braedonb98/GSIS/MainCode/RigControl.h
+/home/braedonb98/GSIS/MainCode/RotorControl.h
 

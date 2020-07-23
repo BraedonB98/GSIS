@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/braedonb98/GSIS/MainCode/cmake-build-debug
 all: CMakeFiles/MainCode.dir/all
 all: CMakeFiles/SettingsTest.dir/all
 all: CMakeFiles/RigControlTest.dir/all
+all: CMakeFiles/RotorControlTest.dir/all
 
 .PHONY : all
 
@@ -68,6 +69,7 @@ preinstall:
 clean: CMakeFiles/MainCode.dir/clean
 clean: CMakeFiles/SettingsTest.dir/clean
 clean: CMakeFiles/RigControlTest.dir/clean
+clean: CMakeFiles/RotorControlTest.dir/clean
 
 .PHONY : clean
 
@@ -78,12 +80,12 @@ clean: CMakeFiles/RigControlTest.dir/clean
 CMakeFiles/MainCode.dir/all:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/depend
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target MainCode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target MainCode"
 .PHONY : CMakeFiles/MainCode.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MainCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MainCode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/MainCode.dir/rule
@@ -105,7 +107,7 @@ CMakeFiles/MainCode.dir/clean:
 CMakeFiles/SettingsTest.dir/all:
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/depend
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15 "Built target SettingsTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=17,18,19,20,21 "Built target SettingsTest"
 .PHONY : CMakeFiles/SettingsTest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -132,7 +134,7 @@ CMakeFiles/SettingsTest.dir/clean:
 CMakeFiles/RigControlTest.dir/all:
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/depend
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=6,7,8,9,10 "Built target RigControlTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=7,8,9,10,11 "Built target RigControlTest"
 .PHONY : CMakeFiles/RigControlTest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -151,6 +153,33 @@ RigControlTest: CMakeFiles/RigControlTest.dir/rule
 CMakeFiles/RigControlTest.dir/clean:
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/clean
 .PHONY : CMakeFiles/RigControlTest.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/RotorControlTest.dir
+
+# All Build rule for target.
+CMakeFiles/RotorControlTest.dir/all:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/depend
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles --progress-num=12,13,14,15,16 "Built target RotorControlTest"
+.PHONY : CMakeFiles/RotorControlTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/RotorControlTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RotorControlTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/RotorControlTest.dir/rule
+
+# Convenience name for target.
+RotorControlTest: CMakeFiles/RotorControlTest.dir/rule
+
+.PHONY : RotorControlTest
+
+# clean rule for target.
+CMakeFiles/RotorControlTest.dir/clean:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/clean
+.PHONY : CMakeFiles/RotorControlTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

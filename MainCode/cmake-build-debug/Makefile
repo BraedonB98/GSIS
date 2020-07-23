@@ -149,6 +149,19 @@ RigControlTest/fast:
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/build
 .PHONY : RigControlTest/fast
 
+#=============================================================================
+# Target rules for targets named RotorControlTest
+
+# Build rule for target.
+RotorControlTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RotorControlTest
+.PHONY : RotorControlTest
+
+# fast build rule for target.
+RotorControlTest/fast:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/build
+.PHONY : RotorControlTest/fast
+
 RigControl.o: RigControl.cpp.o
 
 .PHONY : RigControl.o
@@ -209,6 +222,63 @@ RigControlTest.cpp.s:
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/RigControlTest.cpp.s
 .PHONY : RigControlTest.cpp.s
 
+RotorControl.o: RotorControl.cpp.o
+
+.PHONY : RotorControl.o
+
+# target to build an object file
+RotorControl.cpp.o:
+	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/RotorControl.cpp.o
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControl.cpp.o
+.PHONY : RotorControl.cpp.o
+
+RotorControl.i: RotorControl.cpp.i
+
+.PHONY : RotorControl.i
+
+# target to preprocess a source file
+RotorControl.cpp.i:
+	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/RotorControl.cpp.i
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControl.cpp.i
+.PHONY : RotorControl.cpp.i
+
+RotorControl.s: RotorControl.cpp.s
+
+.PHONY : RotorControl.s
+
+# target to generate assembly for a file
+RotorControl.cpp.s:
+	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/RotorControl.cpp.s
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControl.cpp.s
+.PHONY : RotorControl.cpp.s
+
+RotorControlTest.o: RotorControlTest.cpp.o
+
+.PHONY : RotorControlTest.o
+
+# target to build an object file
+RotorControlTest.cpp.o:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControlTest.cpp.o
+.PHONY : RotorControlTest.cpp.o
+
+RotorControlTest.i: RotorControlTest.cpp.i
+
+.PHONY : RotorControlTest.i
+
+# target to preprocess a source file
+RotorControlTest.cpp.i:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControlTest.cpp.i
+.PHONY : RotorControlTest.cpp.i
+
+RotorControlTest.s: RotorControlTest.cpp.s
+
+.PHONY : RotorControlTest.s
+
+# target to generate assembly for a file
+RotorControlTest.cpp.s:
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/RotorControlTest.cpp.s
+.PHONY : RotorControlTest.cpp.s
+
 Settings.o: Settings.cpp.o
 
 .PHONY : Settings.o
@@ -218,6 +288,7 @@ Settings.cpp.o:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.o
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.o
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/Settings.cpp.o
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/Settings.cpp.o
 .PHONY : Settings.cpp.o
 
 Settings.i: Settings.cpp.i
@@ -229,6 +300,7 @@ Settings.cpp.i:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.i
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.i
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/Settings.cpp.i
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/Settings.cpp.i
 .PHONY : Settings.cpp.i
 
 Settings.s: Settings.cpp.s
@@ -240,6 +312,7 @@ Settings.cpp.s:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/Settings.cpp.s
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/Settings.cpp.s
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/Settings.cpp.s
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/Settings.cpp.s
 .PHONY : Settings.cpp.s
 
 main.o: main.cpp.o
@@ -305,6 +378,7 @@ ui.cpp.o:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.o
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.o
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/ui.cpp.o
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/ui.cpp.o
 .PHONY : ui.cpp.o
 
 ui.i: ui.cpp.i
@@ -316,6 +390,7 @@ ui.cpp.i:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.i
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.i
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/ui.cpp.i
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/ui.cpp.i
 .PHONY : ui.cpp.i
 
 ui.s: ui.cpp.s
@@ -327,6 +402,7 @@ ui.cpp.s:
 	$(MAKE) -f CMakeFiles/MainCode.dir/build.make CMakeFiles/MainCode.dir/ui.cpp.s
 	$(MAKE) -f CMakeFiles/SettingsTest.dir/build.make CMakeFiles/SettingsTest.dir/ui.cpp.s
 	$(MAKE) -f CMakeFiles/RigControlTest.dir/build.make CMakeFiles/RigControlTest.dir/ui.cpp.s
+	$(MAKE) -f CMakeFiles/RotorControlTest.dir/build.make CMakeFiles/RotorControlTest.dir/ui.cpp.s
 .PHONY : ui.cpp.s
 
 # Help Target
@@ -336,16 +412,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... MainCode"
 	@echo "... SettingsTest"
 	@echo "... RigControlTest"
-	@echo "... edit_cache"
+	@echo "... RotorControlTest"
 	@echo "... RigControl.o"
 	@echo "... RigControl.i"
 	@echo "... RigControl.s"
 	@echo "... RigControlTest.o"
 	@echo "... RigControlTest.i"
 	@echo "... RigControlTest.s"
+	@echo "... RotorControl.o"
+	@echo "... RotorControl.i"
+	@echo "... RotorControl.s"
+	@echo "... RotorControlTest.o"
+	@echo "... RotorControlTest.i"
+	@echo "... RotorControlTest.s"
 	@echo "... Settings.o"
 	@echo "... Settings.i"
 	@echo "... Settings.s"

@@ -11,6 +11,7 @@
 #include <sstream>
 
 
+
 using namespace std;
 ui::ui()
 {
@@ -44,7 +45,7 @@ int ui::mainMenu()
         {
             cout<<"Running Main Program"<<endl;
             system("gpredict &");//Launch Gpredict
-            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python3 ./GSISFMTEST.py & ");//launch sdr code
+            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python ./GSISFMTEST.py & ");//launch sdr code
             system("xwxtoimg");//remove from code when I finish code for switching satellites
 
         }
@@ -136,7 +137,6 @@ int ui::wxToImgMenu()
         else if(userInput=="5"||userInput == "Display Current Settings" || userInput == "5.Display Current Settings")
         {
             settings.printWXSettings();
-            break;
         }
         else if(userInput=="6"||userInput == "Return To Main Menu" || userInput == "6.Return To Main Menu")
         {
@@ -171,12 +171,12 @@ int ui::SDRMenu()
         if(userInput=="1"||userInput == "Run SDR FM Test" || userInput == "1.Run SDR FM Test")
         {
             cout << "Running SDR Test, A new window should pop up with FM Test" << endl;
-            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python3 ./GSISFMTEST.py &");
+            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python ./GSISFMTEST.py &");
         }
         else if(userInput=="2"||userInput == "Run SDR Satellite Test" || userInput == "2.Run SDR Satellite Test")
         {
             cout<<"Running SDR Test, A new window should pop up with Sat Test"<<endl;
-            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python3 ./GSISSatTest.py &");
+            system("cd \n cd /home/braedonb98/GSIS/GNURadioCode \n python ./GSISSatTest.py &");
         }
         else if(userInput=="3"||userInput == "Edit SDR Settings" || userInput == "3.Edit SDR Settings")
         {

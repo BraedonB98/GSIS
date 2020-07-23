@@ -51,4 +51,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/MainCode.dir/DependInfo.cmake"
   "CMakeFiles/SettingsTest.dir/DependInfo.cmake"
   "CMakeFiles/RigControlTest.dir/DependInfo.cmake"
+  "CMakeFiles/RotorControlTest.dir/DependInfo.cmake"
   )

@@ -1,5 +1,6 @@
 /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/MainCode.dir
 /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/SettingsTest.dir
 /home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/RigControlTest.dir
-/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/braedonb98/GSIS/MainCode/cmake-build-debug/CMakeFiles/RotorControlTest.dir

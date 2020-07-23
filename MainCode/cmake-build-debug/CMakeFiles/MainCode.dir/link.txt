@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/MainCode.dir/main.cpp.o CMakeFiles/MainCode.dir/ui.cpp.o CMakeFiles/MainCode.dir/Settings.cpp.o CMakeFiles/MainCode.dir/RigControl.cpp.o  -o MainCode 
+/usr/bin/c++  -g   CMakeFiles/MainCode.dir/main.cpp.o CMakeFiles/MainCode.dir/ui.cpp.o CMakeFiles/MainCode.dir/Settings.cpp.o CMakeFiles/MainCode.dir/RigControl.cpp.o CMakeFiles/MainCode.dir/RotorControl.cpp.o  -o MainCode 
