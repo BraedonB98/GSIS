@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/RigControlTest.dir/RigControlTest.cpp.o CMakeFiles/RigControlTest.dir/ui.cpp.o CMakeFiles/RigControlTest.dir/Settings.cpp.o CMakeFiles/RigControlTest.dir/RigControl.cpp.o  -o RigControlTest 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/RotorControlTest.dir/RotorControlTest.cpp.o CMakeFiles/RotorControlTest.dir/ui.cpp.o CMakeFiles/RotorControlTest.dir/Settings.cpp.o CMakeFiles/RotorControlTest.dir/RotorControl.cpp.o  -o RotorControlTest 

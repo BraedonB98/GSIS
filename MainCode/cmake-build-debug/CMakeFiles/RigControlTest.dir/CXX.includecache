@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/braedonb98/GSIS/MainCode/RigControl.cpp
+RigControl.h
+/home/braedonb98/GSIS/MainCode/RigControl.h
+hamlib/rig.h
+-
+hamlib/rotator.h
+-
+
+/home/braedonb98/GSIS/MainCode/RigControl.h
+

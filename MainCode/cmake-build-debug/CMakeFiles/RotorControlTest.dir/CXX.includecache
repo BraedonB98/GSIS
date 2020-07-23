@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/braedonb98/GSIS/MainCode/RotorControlTest.cpp
+iostream
+-
+ui.h
+/home/braedonb98/GSIS/MainCode/ui.h
+
+/home/braedonb98/GSIS/MainCode/Settings.h
+iostream
+-
+
+/home/braedonb98/GSIS/MainCode/ui.h
+Settings.h
+/home/braedonb98/GSIS/MainCode/Settings.h
+
