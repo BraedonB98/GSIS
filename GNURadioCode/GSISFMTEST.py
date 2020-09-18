@@ -4,7 +4,7 @@
 # GNU Radio Python Flow Graph
 # Title: Ground station integration software FM Test Code
 # Author: Braedon Bellamy
-# Generated: Sun Jul 12 20:53:44 2020
+# Generated: Thu Sep 17 20:54:52 2020
 ##################################################
 
 from distutils.version import StrictVersion
@@ -29,10 +29,10 @@ from gnuradio import eng_notation
 from gnuradio import filter
 from gnuradio import gr
 from gnuradio import qtgui
+from gnuradio import uhd
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
-import osmosdr
 import sip
 import sys
 import time
@@ -106,20 +106,18 @@ class GSISFMTEST(gr.top_block, Qt.QWidget):
         self._sat_button_group.buttonClicked[int].connect(
         	lambda i: self.set_sat(self._sat_options[i]))
         self.settingsTab_layout_0.addWidget(self._sat_group_box)
-        self.hackRF = osmosdr.source( args="numchan=" + str(1) + " " + '' )
-        self.hackRF.set_time_unknown_pps(osmosdr.time_spec_t())
-        self.hackRF.set_sample_rate(samp_rate)
-        self.hackRF.set_center_freq(sat*1e6, 0)
-        self.hackRF.set_freq_corr(0, 0)
-        self.hackRF.set_dc_offset_mode(2, 0)
-        self.hackRF.set_iq_balance_mode(2, 0)
-        self.hackRF.set_gain_mode(False, 0)
-        self.hackRF.set_gain(8, 0)
-        self.hackRF.set_if_gain(20, 0)
-        self.hackRF.set_bb_gain(20, 0)
-        self.hackRF.set_antenna('', 0)
-        self.hackRF.set_bandwidth(100000, 0)
-
+        self.uhd_usrp_source_0 = uhd.usrp_source(
+        	",".join(("", "")),
+        	uhd.stream_args(
+        		cpu_format="fc32",
+        		channels=range(1),
+        	),
+        )
+        self.uhd_usrp_source_0.set_samp_rate(samp_rate)
+        self.uhd_usrp_source_0.set_time_unknown_pps(uhd.time_spec())
+        self.uhd_usrp_source_0.set_center_freq(sat*1e6, 0)
+        self.uhd_usrp_source_0.set_gain(1, 0)
+        self.uhd_usrp_source_0.set_bandwidth(300, 0)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=48e4,
         	audio_decimation=10,
@@ -225,7 +223,7 @@ class GSISFMTEST(gr.top_block, Qt.QWidget):
         self.connect((self.Resampler, 0), (self.LowPassFilter, 0))
         self.connect((self.analog_wfm_rcv_0, 0), (self.AudioSink, 0))
         self.connect((self.analog_wfm_rcv_0, 0), (self.WavSink, 0))
-        self.connect((self.hackRF, 0), (self.DCBlocker, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.DCBlocker, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "GSISFMTEST")
@@ -238,7 +236,7 @@ class GSISFMTEST(gr.top_block, Qt.QWidget):
     def set_sat(self, sat):
         self.sat = sat
         self._sat_callback(self.sat)
-        self.hackRF.set_center_freq(self.sat*1e6, 0)
+        self.uhd_usrp_source_0.set_center_freq(self.sat*1e6, 0)
         self.WaterfallSink.set_frequency_range(self.sat*1e6, self.samp_rate)
         self.FreqSink.set_frequency_range(self.sat*1e6, self.samp_rate)
 
@@ -247,7 +245,7 @@ class GSISFMTEST(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.hackRF.set_sample_rate(self.samp_rate)
+        self.uhd_usrp_source_0.set_samp_rate(self.samp_rate)
         self.WaterfallSink.set_frequency_range(self.sat*1e6, self.samp_rate)
         self.LowPassFilter.set_taps(firdes.low_pass(1, self.samp_rate, 10e3, 2e6, firdes.WIN_HAMMING, 6.76))
         self.FreqSink.set_frequency_range(self.sat*1e6, self.samp_rate)

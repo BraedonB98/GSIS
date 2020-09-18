@@ -6,14 +6,56 @@
 
 #IncludeRegexTransform: 
 
+/home/braedonb98/GSIS/MainCode/RotorControl.cpp
+RotorControl.h
+/home/braedonb98/GSIS/MainCode/RotorControl.h
+hamlib/rig.h
+-
+hamlib/rotator.h
+-
+
+/home/braedonb98/GSIS/MainCode/RotorControl.h
+
 /home/braedonb98/GSIS/MainCode/RotorControlTest.cpp
 iostream
 -
 ui.h
 /home/braedonb98/GSIS/MainCode/ui.h
 
+/home/braedonb98/GSIS/MainCode/Settings.cpp
+Settings.h
 /home/braedonb98/GSIS/MainCode/Settings.h
 iostream
+-
+fstream
+-
+iomanip
+-
+stdio.h
+-
+stdlib.h
+-
+bits/stdc++.h
+-
+
+/home/braedonb98/GSIS/MainCode/Settings.h
+iostream
+-
+
+/home/braedonb98/GSIS/MainCode/ui.cpp
+ui.h
+/home/braedonb98/GSIS/MainCode/ui.h
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+bits/stdc++.h
+-
+Settings.h
+/home/braedonb98/GSIS/MainCode/Settings.h
+sstream
 -
 
 /home/braedonb98/GSIS/MainCode/ui.h
